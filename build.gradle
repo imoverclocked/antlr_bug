@@ -62,6 +62,18 @@ generateGrammarSource {
     *
     * error(5):  directory not found: /Users/imoverclocked/antlr_bug/build/generated-src/antlr/main/com/example/foo
     */
+
+   /*
+    * -- The `antlr4` command can work if:
+    *
+    * % cd src/main/antlr
+    * % mkdir -p com/example/foo/out/com/example/foo
+    * % antlr4 -o com/example/foo/out/ -lib com/example/foo/out/com/example/foo com/example/foo/FooLexer.g4 com/example/foo/Foo.g4
+    *
+    * however, there seems to be no way to translate this into a gradle hack
+    * because the output directory is wiped away at the beginning of the
+    * "generateGrammarSource" task
+    */
 }
 
 dependencies {
